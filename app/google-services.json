@@ -1,0 +1,35 @@
+{
+  "project_info": {
+    "project_number": "970971485547",
+    "firebase_url": "https://e-learning-a8663.firebaseio.com",
+    "project_id": "e-learning-a8663",
+    "storage_bucket": "e-learning-a8663.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:970971485547:android:073eb297930aa4b3",
+        "android_client_info": {
+          "package_name": "com.pradiptapa.elearning"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCM-OTiYK4E_vZWU_az2yblLynW_bUeTeM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "970971485547-nk0fc82ido5mtu7t5lebqbkfbh4oetga.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
