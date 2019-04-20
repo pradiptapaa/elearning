@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                             xmlns:app="http://schemas.android.com/apk/res-auto"
-                                             xmlns:tools="http://schemas.android.com/tools"
-                                             android:layout_width="match_parent"
-                                             android:layout_height="wrap_content">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content">
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:cardCornerRadius="10dp" android:layout_marginTop="8dp"
@@ -18,29 +18,48 @@
                 android:layout_margin="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
             <TextView
                     android:text="Matematika: Sistematika Matematika"
                     android:textSize="18dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/textView3" android:textStyle="bold"/>
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_ass_title"
+                    android:textStyle="bold"/>
             <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
+
                 <TextView
                         android:text="Dikirim: 28 Agustus 2019"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" android:id="@+id/textView9" android:layout_weight="1"/>
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tv_ass_sent"
+                        android:layout_weight="1"/>
+
                 <TextView
                         android:text="Deadline: 29 Agustus 2019"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" android:id="@+id/textView11" android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tv_ass_deadline"
+                        android:layout_weight="1"
                         android:visibility="gone"/>
             </LinearLayout>
+
+            <TextView
+                    android:text="Untuk: VIIB"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView2"
+                    android:layout_weight="1"/>
+
             <TextView
                     android:text="Oleh: Admin"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/textView8"/>
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_ass_by"/>
+
         </LinearLayout>
-    </android.support.v7.widget.CardView>
-</android.support.constraint.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

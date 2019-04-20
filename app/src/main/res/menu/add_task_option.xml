@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+
+    <item
+            android:id="@+id/task_attach"
+            android:title="Send"
+            android:icon="@drawable/attach"
+            android:enabled="true"
+            android:checkable="false"
+            app:showAsAction="always"/>
+    <item
+            android:id="@+id/task_send"
+            android:title="Kirim"
+            android:enabled="true"
+            android:checkable="false"
+            app:showAsAction="always"/>
+
+</menu>

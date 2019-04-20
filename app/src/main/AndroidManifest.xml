@@ -23,6 +23,17 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity
+                android:name=".MainActivity"></activity>
+        <activity
+                android:name=".RegisStudent"></activity>
+        <activity
+                android:name=".RegisTeacher"></activity>
+        <activity
+                android:name=".InsertVoucher"></activity>
+
+        <activity
+                android:name=".InsertTask"></activity>
     </application>
 
 </manifest>

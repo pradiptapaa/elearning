@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                             xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+              xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
               android:orientation="vertical"
               android:layout_height="match_parent">
 
@@ -8,7 +8,7 @@
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/pb_regis_student"
+            android:id="@+id/pb_regis_teacher"
             android:layout_weight="0.1"
             android:indeterminate="true"
             android:visibility="gone"/>
@@ -27,7 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/common_google_signin_btn_icon_dark"
-                android:id="@+id/img_regis_student_photo"
+                android:id="@+id/img_regis_teacher_photo"
                 android:layout_weight="0.3"/>
 
         <EditText
@@ -37,9 +37,9 @@
                 android:gravity="bottom|start"
 
                 android:ems="10"
-                android:id="@+id/et_regis_student_name"
+                android:id="@+id/et_regis_teacher_name"
                 android:layout_weight="0.6"
-                android:hint="Nama Murid"/>
+                android:hint="Nama Guru"/>
 
         <LinearLayout
                 android:orientation="horizontal"
@@ -51,37 +51,37 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="textPersonName"
-                    android:text="pradiptapa"
+                    android:text="Name"
                     android:ems="10"
-                    android:id="@+id/et_regis_student_email"
+                    android:id="@+id/et_regis_teacher_email"
                     android:layout_weight="1"/>
 
             <TextView
-                    android:text="@albiruni.com"
+                    android:text="test"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/tv_regis_student_school"
-                    android:layout_weight="1"
+                    android:id="@+id/tv_regis_teacher_school"
+                    android:layout_weight="1.5"
+                    android:gravity="center_vertical"
                     app:autoSizeTextType="uniform"/>
         </LinearLayout>
 
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="textPassword"
-                android:text="@string/error_incorrect_password"
+                android:text="Name"
                 android:ems="10"
-                android:id="@+id/et_regis_student_password"
-                android:layout_weight="0.6"/>
+                android:id="@+id/et_regis_teacher_password"
+                android:layout_weight="0.6"
+                android:inputType="textPassword"/>
 
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="textPassword"
                 android:ems="10"
-                android:id="@+id/et_regis_student_password_confirm"
-                android:layout_weight="0.6"
-                android:text="asdas"/>
+                android:id="@+id/et_regis_teacher_password_confirm"
+                android:layout_weight="0.6"/>
 
         <LinearLayout
                 android:orientation="horizontal"
@@ -95,33 +95,22 @@
                     android:inputType="textPersonName"
                     android:gravity="bottom|start"
                     android:ems="10"
-                    android:id="@+id/et_regis_student_class"
+                    android:id="@+id/et_regis_teacher_education"
                     android:layout_weight="1"
-                    android:hint="Kelas"/>
+                    android:hint="Pelajaran"/>
 
             <EditText
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="textPersonName"
+                    android:ems="10"
                     android:gravity="bottom|start"
 
-                    android:ems="10"
-                    android:id="@+id/et_regis_student_optional"
+                    android:id="@+id/et_regis_teacher_number"
                     android:layout_weight="1"
-                    android:hint=" *Optional"/>
-
-            <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:inputType="number"
-                    android:ems="10"
-                    android:maxLength="2"
-                    android:gravity="bottom|start"
-
-                    android:id="@+id/et_regis_student_number"
-                    android:layout_weight="1"
-                    android:hint="Absen"/>
+                    android:hint="Number"/>
         </LinearLayout>
+
     </LinearLayout>
     <LinearLayout
             android:orientation="horizontal"
@@ -136,10 +125,10 @@
                 android:layout_height="match_parent" android:id="@+id/button" android:layout_weight="1"/>
 
         <Button
-                android:text="Button"
+                android:text="Confirm"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/btn_regis_student"
+                android:id="@+id/btn_regis_teacher"
                 android:layout_weight="1"/>
     </LinearLayout>
 </LinearLayout>

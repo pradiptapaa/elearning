@@ -4,8 +4,8 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.annotation.TargetApi
 import android.content.pm.PackageManager
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
+import androidx.appcompat.app.AppCompatActivity
 import android.app.LoaderManager.LoaderCallbacks
 import android.content.CursorLoader
 import android.content.Loader
@@ -23,6 +23,12 @@ import android.widget.TextView
 
 import java.util.ArrayList
 import android.Manifest.permission.READ_CONTACTS
+import android.content.Context
+import android.content.Intent
+import android.util.Log
+import android.view.Window
+import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
 import com.pradiptapa.elearning.firebase.Firebase
 
 import kotlinx.android.synthetic.main.activity_login.*
@@ -31,12 +37,16 @@ import kotlinx.android.synthetic.main.activity_login.*
  * A login screen that offers login via email/password.
  */
 class LoginActivity : AppCompatActivity() {
-    /**
-     * Keep track of the login task to ensure we can cancel it if requested.
-     */
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_login)
+
+        if(FirebaseAuth.getInstance().currentUser != null){
+            startActivity(Intent(this,MainActivity::class.java))
+        }
         // Set up the login form.
         password.setOnEditorActionListener(TextView.OnEditorActionListener { _, id, _ ->
             if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
@@ -46,7 +56,13 @@ class LoginActivity : AppCompatActivity() {
             false
         })
 
-        email_sign_in_button.setOnClickListener { attemptLogin() }
+        email_sign_in_button.setOnClickListener {
+            pb_login.visibility = View.VISIBLE
+            attemptLogin() }
+
+        tv_link_regis.setOnClickListener{
+            startActivity(Intent(this,InsertVoucher::class.java))
+        }
     }
 
 
@@ -63,6 +79,7 @@ class LoginActivity : AppCompatActivity() {
         if (Firebase.currUser != null) {
             return
         }
+
 
         // Reset errors.
         email.error = null
@@ -100,7 +117,7 @@ class LoginActivity : AppCompatActivity() {
         } else {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
-            Firebase.signInWithEmailAndPassword(emailStr,passwordStr,this)
+            signInWithEmailAndPassword(emailStr,passwordStr,this)
         }
     }
 
@@ -111,6 +128,30 @@ class LoginActivity : AppCompatActivity() {
 
     private fun isPasswordValid(password: String): Boolean {
         //TODO: Replace this with your own logic
-        return password.length > 6
+        return password.length > 5
+    }
+
+    fun signInWithEmailAndPassword(email: String, password: String, context: Context) {
+        Firebase.auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener() { task ->
+                if (task.isSuccessful) {
+                    // Sign in success, update UI with the signed-in user's information
+                    pb_login.visibility = View.GONE
+
+                    startActivity(Intent(context,MainActivity::class.java))
+                    Log.d(Firebase.TAG, "signInWithEmail:success")
+                } else {
+                    // If sign in fails, display a message to the user.
+                    Log.w(Firebase.TAG, "signInWithEmail:failure", task.exception)
+                    Toast.makeText(
+                        context, "Authentication failed.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    pb_login.visibility = View.GONE
+
+                }
+
+                // ...
+            }
     }
 }
